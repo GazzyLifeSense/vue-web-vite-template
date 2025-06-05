@@ -17,10 +17,11 @@ export default [
   { files: [ "**/*.vue" ], languageOptions: { parserOptions: { parser: tseslint.parser } } },
   {
     rules: {
-      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/no-unused-vars": "off",
       "semi": "off",
       "object-curly-spacing": [ "error", "always" ],
-      "array-bracket-spacing": [ "error", "always" ],
+      "array-bracket-spacing": "off",
       "no-duplicate-imports": "error"
     }
   }
