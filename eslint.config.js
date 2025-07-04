@@ -17,6 +17,7 @@ export default [
   { files: [ "**/*.vue" ], languageOptions: { parserOptions: { parser: tseslint.parser } } },
   {
     rules: {
+      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-this-alias": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "semi": "off",
