@@ -25,20 +25,6 @@ function throttle(fn, time, ...args){
     } 
 }
 
-// 节流  短时间内的多次调用只生效第一次
-function throttle(fn, time, ...args){
-    let timer;
-    return ()=>{
-        if(!timer){
-            fn(...args)
-            timer = setTimeout(()=>{
-                clearTimeout(timer)
-                timer = null
-            }, time)
-        }
-    } 
-}
-
 /**
  * 防抖函数
  * @param {Function} fn - 目标函数
