@@ -11,6 +11,34 @@ function getValue(arr: [], key: string, value: any, path = ''){
     return result
 }
 
+// 节流  短时间内的多次调用只生效第一次
+function throttle(fn, time, ...args){
+    let timer;
+    return ()=>{
+        if(!timer){
+            fn(...args)
+            timer = setTimeout(()=>{
+                clearTimeout(timer)
+                timer = null
+            }, time)
+        }
+    } 
+}
+
+// 节流  短时间内的多次调用只生效第一次
+function throttle(fn, time, ...args){
+    let timer;
+    return ()=>{
+        if(!timer){
+            fn(...args)
+            timer = setTimeout(()=>{
+                clearTimeout(timer)
+                timer = null
+            }, time)
+        }
+    } 
+}
+
 /**
  * 防抖函数
  * @param {Function} fn - 目标函数
@@ -44,4 +72,10 @@ function debounce(fn, delay = 1000, immediate = false) {
     }
   }
 
-export { parseTime, getValue, debounce }
+
+export { 
+    parseTime, 
+    getValue,
+    throttle,
+    debounce
+}

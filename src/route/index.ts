@@ -1,6 +1,8 @@
 import { createRouter, RouteRecordRaw, createWebHistory } from "vue-router"
 import NProgress from "nprogress"
 import DemoPage from "@/views/DemoPage.vue"
+import TestPage from "@/views/TestPage.vue"
+
 import NotFound from "@/components/NotFound.vue"
 
 const routes: RouteRecordRaw[] = [
@@ -9,6 +11,12 @@ const routes: RouteRecordRaw[] = [
         name: "Main",
         component: DemoPage,
         props: { msg: "vue-web-template" }
+    },
+    {        
+        path:"/test",
+        name: "Test",
+        component: TestPage,
+        props: {  }
     },
     {
         path: "/404",
